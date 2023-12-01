@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+
+<!DOCTYPE web-app
+        PUBLIC "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+        "http://java.sun.com/dtd/web-app_2_3.dtd">
+
+<web-app>
+
+    <servlet>
+        <servlet-name>freemarker</servlet-name>
+        <servlet-class>freemarker.ext.servlet.FreemarkerServlet</servlet-class>
+
+
+        <init-param>
+            <param-name>TemplatePath</param-name>
+            <param-value>/WEB-INF/view</param-value>
+        </init-param>
+        <init-param>
+            <param-name>default_encoding</param-name>
+
+            <param-value>UTF-8</param-value>
+        </init-param>
+        https://freemarker.apache.org/docs/api/freemarker/ext/servlet/FreemarkerServlet.html
+        <init-param>
+            <param-name>output_encoding</param-name>
+
+            <param-value>UTF-8</param-value>
+        </init-param>
+        <init-param>
+            <param-name>locale</param-name>
+
+            <param-value>ru_RU</param-value>
+        </init-param>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>freemarker</servlet-name>
+        <url-pattern>*.ftl</url-pattern>
+    </servlet-mapping>
+
+    <session-config>
+        <session-timeout>7</session-timeout>
+    </session-config>
+
+</web-app>
